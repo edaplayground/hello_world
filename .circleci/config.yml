@@ -7,6 +7,9 @@ jobs:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "65:4f:13:6a:1c:1f:6a:71:94:76:8a:f5:63:6d:e1:5a"
       - checkout
       - run: echo "A first hello"
       - run: mkdir -p my_workspace
